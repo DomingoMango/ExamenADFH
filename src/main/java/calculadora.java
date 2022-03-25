@@ -1,8 +1,11 @@
+
+
 public class calculadora {
     private String marca;
-    private boolean esCientifica;
-    private double primerValor;
-    private double segundoValor;
+    private static boolean esCientifica;
+    private static double primerValor;
+    private static double segundoValor;
+    static double s=0;
 
     public String getMarca() {
         return marca;
@@ -40,4 +43,47 @@ public class calculadora {
         this.marca = marca;
         this.esCientifica = esCientifica;
     }
+
+    @Override
+    public String toString() {
+        if(esCientifica=false){
+            return "La calculadora es de marca: " + marca
+                    + " y no es cientifica";
+        }else{
+            return "La calculadora es de marca: " + marca
+                    + " y es cientifica";
+        }
+
+    }
+
+    public static double sumar(){
+
+        s=primerValor+segundoValor;
+
+
+        return s;
+    }
+    public static double resta(){
+
+        s=primerValor-segundoValor;
+        return s;
+    }
+    public static double multiplicar(){
+        s=primerValor*segundoValor;
+        return s;
+    }
+    public static double dividir(){
+        s=primerValor/segundoValor;
+        return s;
+    }
+    public static String elevarAPotencia(){
+        if (esCientifica=false){
+            return "Tu calculadora no es cientifica, no puede realizar esta operacion";
+        }else {
+            s=Math.pow(primerValor,segundoValor);
+            return ""+ s;
+        }
+
+    }
+
 }
