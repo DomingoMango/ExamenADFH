@@ -46,7 +46,7 @@ public class calculadora {
 
     @Override
     public String toString() {
-        if(esCientifica=false){
+        if(esCientifica==false){
             return "La calculadora es de marca: " + marca
                     + " y no es cientifica";
         }else{
@@ -73,11 +73,17 @@ public class calculadora {
         return s;
     }
     public static double dividir(){
-        s=primerValor/segundoValor;
-        return s;
+        if(segundoValor==0){
+            s=0;
+            return s;
+        }else{
+            s=primerValor/segundoValor;
+            return s;
+        }
+
     }
     public static String elevarAPotencia(){
-        if (esCientifica=false){
+        if (esCientifica==false){
             return "Tu calculadora no es cientifica, no puede realizar esta operacion";
         }else {
             s=Math.pow(primerValor,segundoValor);
